@@ -1,0 +1,19 @@
+LIBRO: 
+    - isbn
+    - titulo
+    - autor
+    - año
+    - genero
+    - disponible
+
+USUARIO: 
+    - id
+    - nombre
+    - apellidos 
+    - email
+
+PRESTAMO: 
+    - usuario 
+    - libro 
+    - fecha_prestamo
+    - fecha_devolucion
