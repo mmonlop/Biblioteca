@@ -2,10 +2,10 @@ class Biblioteca:
 
     def __init__(self):
         self.libros = []
-        usuarios = []
+        self.usuarios = []
         prestamos = []
 
-
+    ##### LIBROS ####
     def registrar_libro(self,libro):
         #buscar si hay otro libro con ese isbn
         if self.buscar_libro(libro):
@@ -20,3 +20,14 @@ class Biblioteca:
                 return libro
         return None
 
+    def listar_libros(self):
+        for libro in self.libros:
+            print(libro)
+
+    def buscar_libro(self,isbn):
+        for libro in self.libros:
+            if libro.isbn == isbn:
+                print(libro)
+            else:
+                print("El libro no existe")
+    

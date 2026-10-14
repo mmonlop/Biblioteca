@@ -40,8 +40,15 @@ def main():
             libro = Libro(isbn,titulo,autor,año,genero)
 
             biblioteca.registrar_libro(libro)
+
+        elif op == 3:
+            isbn = input("ISBN: ")
+            biblioteca.buscar_libro(isbn)
+        elif op == 4:
+            biblioteca.listar_libros()
+
         elif op == 0:
-            break   
+            break 
 
 
 
