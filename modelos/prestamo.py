@@ -5,7 +5,7 @@ class Prestamo:
     def __init__(self,usuario,libro,fecha_prestamo=None,fecha_devolucion=None):
         self.usuario = usuario
         self.libro = libro 
-        self.fecha_prestamo = (fecha_prestamo if fecha_prestamo is not None else date.today())
+        self.fecha_prestamo = (fecha_prestamo if fecha_prestamo else date.today())
         self.fecha_devolucion = fecha_devolucion
 
     @property

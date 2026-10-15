@@ -41,11 +41,42 @@ def main():
 
             biblioteca.registrar_libro(libro)
 
+        elif op == 2:
+            id = input("ID: ")
+            nombre = input("Nombre: ")
+            apellidos = input("Apellidos: ")
+            email = input("Email: ")
+
+            usuario = Usuario(id,nombre,apellidos,email)
+
+            biblioteca.registrar_usuario(usuario)
+
         elif op == 3:
             isbn = input("ISBN: ")
             biblioteca.buscar_libro(isbn)
+
         elif op == 4:
             biblioteca.listar_libros()
+
+        elif op == 5:
+
+            id_usuario = input("ID de usuario: ")
+            id_libro = input("ID de libro: ")
+            fecha = input("Fecha: ")
+
+            prestamo = Prestamo(id_usuario,id_libro,fecha)
+
+            biblioteca.realizar_prestamo(prestamo)
+
+        elif op == 6:
+
+            libro = input("Id libro: ")
+            fecha = input("Fecha devolucion: ")
+
+            biblioteca.registrar_devolucion(libro,fecha)
+
+        elif op == 7:
+            biblioteca.mostrar_prestamos_activos()
 
         elif op == 0:
             break 
