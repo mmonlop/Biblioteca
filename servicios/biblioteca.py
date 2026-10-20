@@ -1,9 +1,23 @@
+from servicios import ficheros
+
 class Biblioteca:
 
     def __init__(self):
         self.libros = []
         self.usuarios = []
         self.prestamos = []
+
+    
+
+    ### ficheros 
+
+    def cargar_datos():
+        ficheros.cargar_datos()
+
+    #def guardar_datos(self,datos):
+     #   ficheros.guardar_datos(datos)
+
+
 
     ##### LIBROS ####
     def registrar_libro(self,libro):
@@ -18,12 +32,21 @@ class Biblioteca:
         for libro in self.libros:
             print(libro)
 
-    def buscar_libro(self,isbn):
+    def buscar_libro(self,libro):
+        for libr in self.libros:
+            if libr.isbn == libro.isbn:
+                #print(libro)
+                return libro
+            
+        print("El libro no existe")
+        return None
+
+    def buscar_libro_isbn(self,isbn):
         for libro in self.libros:
             if libro.isbn == isbn:
                 print(libro)
-                return libro
-            
+                return
+
         print("El libro no existe")
         return None
     
@@ -36,6 +59,7 @@ class Biblioteca:
             return
 
         self.usuarios.append(usuario)
+        print("Usuario creado")
 
 
     def buscar_usuario(self,usuario):
@@ -49,10 +73,16 @@ class Biblioteca:
     def realizar_prestamo(self,prestamo):
 
         for libro in self.libros:
-            if libro.isbn == prestamo.libro and libro.disponible:
-                self.prestamos.append(prestamo)
-                libro.disponible = False    
-                return
+            if libro.isbn == prestamo.libro:
+                if libro.disponible:
+                    self.prestamos.append(prestamo)
+                    print("Prestamo realizado")
+                    libro.disponible = False
+                    return
+                print("El libro no esta disponible")
+                return None
+            print("El libro no existe")
+            return None
 
         print("El libro esta prestado")
 
@@ -64,6 +94,13 @@ class Biblioteca:
                 return
 
     def mostrar_prestamos_activos(self):
+        activos = {}
         for prestamo in self.prestamos:
             if not prestamo.fecha_devolucion:
-                print(prestamo)
+                activos = prestamo
+
+        print(activos)
+
+
+
+

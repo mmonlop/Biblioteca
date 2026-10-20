@@ -4,6 +4,7 @@ from modelos.prestamo import Prestamo
 from servicios.biblioteca import Biblioteca
 
 
+
 def menu():
     print("=================================")
     print("      GESTIÓN DE BIBLIOTECA      ")
@@ -24,6 +25,8 @@ def menu():
 def main():
 
     biblioteca = Biblioteca()
+
+    biblioteca.cargar_datos()
 
     while True:
         menu()
@@ -53,7 +56,7 @@ def main():
 
         elif op == 3:
             isbn = input("ISBN: ")
-            biblioteca.buscar_libro(isbn)
+            biblioteca.buscar_libro_isbn(isbn)
 
         elif op == 4:
             biblioteca.listar_libros()
@@ -78,9 +81,14 @@ def main():
         elif op == 7:
             biblioteca.mostrar_prestamos_activos()
 
-        elif op == 0:
-            break 
+        elif op == 8:
+            pass
 
+        elif op == 9:
+            biblioteca.guardar_datos()
+
+        elif op == 0:
+            break
 
 
 if __name__ == "__main__":
