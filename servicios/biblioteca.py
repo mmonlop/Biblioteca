@@ -1,21 +1,19 @@
-from servicios import ficheros
+from servicios.ficheros import cargar,guardar_libro
 
 class Biblioteca:
 
     def __init__(self):
-        self.libros = []
-        self.usuarios = []
-        self.prestamos = []
+        self.libros = self.datos_libros
+        self.usuarios = self.datos_usuarios
+        self.prestamos = self.datos_prestamos
 
     
 
     ### ficheros 
 
-    def cargar_datos():
-        ficheros.cargar_datos()
-
-    #def guardar_datos(self,datos):
-     #   ficheros.guardar_datos(datos)
+    datos_libros = cargar("libros")
+    datos_usuarios = cargar("usuarios")
+    datos_prestamos = cargar("prestamos")
 
 
 
@@ -27,6 +25,8 @@ class Biblioteca:
             return 
 
         self.libros.append(libro)
+        guardar_libro(libro)
+
 
     def listar_libros(self):
         for libro in self.libros:

@@ -26,7 +26,6 @@ def main():
 
     biblioteca = Biblioteca()
 
-    biblioteca.cargar_datos()
 
     while True:
         menu()
@@ -85,7 +84,8 @@ def main():
             pass
 
         elif op == 9:
-            biblioteca.guardar_datos()
+            #biblioteca.guardar_datos()
+            pass
 
         elif op == 0:
             break

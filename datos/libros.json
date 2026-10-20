@@ -1,0 +1,9 @@
+[{
+    "isbn":1,
+    "titulo":"How to build a car",
+    "autor": "Adrian Newey",
+    "anio": 2023,
+    "genero": "biografia",
+    "disponible": true
+
+}]
