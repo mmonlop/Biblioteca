@@ -17,8 +17,8 @@ class Prestamo:
 
     def to_dict(self):
         return {
-            "usuario": {self.usuario.id},
-            "libro": {self.libro.isbn},
-            "fecha_prestamo": {self.fecha_prestamo.isoformat()},
-            "fecha_devolucion": {self.fecha_devolucion.isoformat()}
+            "usuario": self.usuario.id,
+            "libro": self.libro.isbn,
+            "fecha_prestamo": self.fecha_prestamo.isoformat(),
+            "fecha_devolucion": self.fecha_devolucion.isoformat()
         }

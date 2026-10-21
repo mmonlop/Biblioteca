@@ -51,7 +51,15 @@ def guardar_datos(biblioteca):
 
     usuarios = []
     for usuario in biblioteca.usuarios:
-        usuario.append(usuario.__dict__)
+        usuarios.append(usuario.__dict__)
 
     with open(ruta_usuarios,"w",encoding="utf-8")as fichero:
         json.dump(usuarios,fichero,ensure_ascii=False)
+
+
+    prestamos = []
+    for prestamo in biblioteca.prestamos:
+        prestamos.append(prestamo.__dict__)
+
+    with open(ruta_prestamos, 'w', encoding="utf-8") as fichero:
+        json.dump(prestamos, fichero, ensure_ascii=False)

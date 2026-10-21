@@ -1,6 +1,8 @@
-[{
-    "usuario": 1,
-    "libro":1,
-    "fecha_prestamo": "21/10/2026",
-    "fecha_devolucion": false
-}]
+[
+    {
+        "usuario": null,
+        "libro": null,
+        "fecha_prestamo": "21/10/2026",
+        "fecha_devolucion": false
+    }
+]

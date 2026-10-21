@@ -1,10 +1,1 @@
-[
-  {
-    "isbn": 1,
-    "titulo": "f",
-    "autor": "f",
-    "año": "f",
-    "genero": "f",
-    "disponible": true
-  }
-]
+[{"isbn": 1, "titulo": "f", "autor": "f", "año": "f", "genero": "f", "disponible": "Disponible"}, {"isbn": 2, "titulo": "How to build a car", "autor": "Adrian Newey", "año": "2023", "genero": "biografia", "disponible": true}]

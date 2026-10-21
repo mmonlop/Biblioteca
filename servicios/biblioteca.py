@@ -18,7 +18,7 @@ class Biblioteca:
 
 
     def guardar(self):
-        guardar_datos(self.libros)
+        guardar_datos(self)
 
 
     ##### LIBROS ####
