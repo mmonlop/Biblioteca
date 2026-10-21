@@ -14,3 +14,11 @@ class Prestamo:
 
     def __str__(self):
         return f"USUARIO {self.usuario} - LIBRO {self.libro} - F_PRESTAMO {self.fecha_prestamo} - F_DEVOLUCION {self.fecha_devolucion}"
+
+    def to_dict(self):
+        return {
+            "usuario": {self.usuario.id},
+            "libro": {self.libro.isbn},
+            "fecha_prestamo": {self.fecha_prestamo.isoformat()},
+            "fecha_devolucion": {self.fecha_devolucion.isoformat()}
+        }

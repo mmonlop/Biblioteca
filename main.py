@@ -2,6 +2,7 @@ from modelos.libro import Libro
 from modelos.usuario import Usuario
 from modelos.prestamo import Prestamo
 from servicios.biblioteca import Biblioteca
+from servicios.ficheros import cargar
 
 
 
@@ -25,6 +26,9 @@ def menu():
 def main():
 
     biblioteca = Biblioteca()
+    cargar(biblioteca)
+
+    #biblioteca.mostrarrrr()
 
 
     while True:
@@ -33,7 +37,7 @@ def main():
 
 
         if op == 1:
-            isbn = input("ISBN: ")
+            isbn = int(input("ISBN: "))
             titulo = input("Titulo: ")
             autor = input("Autor: ")
             año = input("Año: ")
@@ -54,7 +58,7 @@ def main():
             biblioteca.registrar_usuario(usuario)
 
         elif op == 3:
-            isbn = input("ISBN: ")
+            isbn = int(input("ISBN: "))
             biblioteca.buscar_libro_isbn(isbn)
 
         elif op == 4:
@@ -81,10 +85,10 @@ def main():
             biblioteca.mostrar_prestamos_activos()
 
         elif op == 8:
-            pass
+            biblioteca.buscar_usuario_id(1)
 
         elif op == 9:
-            #biblioteca.guardar_datos()
+            biblioteca.guardar()
             pass
 
         elif op == 0:
